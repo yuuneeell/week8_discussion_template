@@ -1,16 +1,21 @@
-# week8datapersistence
+# Simple Todo App
 
-A new Flutter project.
+This simple todo app has an add, edit, and delete functionality. It uses a provider for state management
 
-## Getting Started
+## Folder Structure
 
-This project is a starting point for a Flutter application.
+```
+lib
+├───models
+│   └───todo_model.dart
+├───providers
+│   └───todo_provider.dart
+├───screens
+│   ├───modal_todo.dart
+│   └───todo_page.dart
+└───main.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Models - contains the data model used
+- Providers - contains the Todo provider that contains the data and method logic
+- Screens - contains the screen/widgets used
