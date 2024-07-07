@@ -1,49 +1,39 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../models/todo_model.dart';
 
 class TodoListProvider with ChangeNotifier {
-  List<Todo> _todoList = [
-    Todo(
-      completed: true,
-      userId: 1,
-      title: "Grocery",
-    ),
-    Todo(
-      completed: true,
-      userId: 1,
-      title: "Bills",
-    ),
-    Todo(
-      completed: false,
-      userId: 1,
-      title: "Walk dog",
-    ),
-  ];
+  late Stream<QuerySnapshot> _todosStream;
+
+  TodoListProvider() {
+    fetchTodos();
+  }
 
   // getter
-  List<Todo> get todo => _todoList;
+  Stream<QuerySnapshot> get todo => _todosStream;
 
+  // TODO: get all todo items from Firestore
+  void fetchTodos() {
+    notifyListeners();
+  }
+
+  // TODO: add todo item and store it in Firestore
   void addTodo(Todo item) {
-    _todoList.add(item);
     notifyListeners();
   }
 
-  void editTodo(int index, String newTitle) {
-    _todoList[index].title = newTitle;
+  // TODO: edit a todo item and update it in Firestore
+  void editTodo(Todo item, String newTitle) {
     notifyListeners();
   }
 
-  void deleteTodo(String title) {
-    for (int i = 0; i < _todoList.length; i++) {
-      if (_todoList[i].title == title) {
-        _todoList.remove(_todoList[i]);
-      }
-    }
+  // TODO: delete a todo item and update it in Firestore
+  void deleteTodo(Todo item) {
     notifyListeners();
   }
 
-  void toggleStatus(int index, bool status) {
-    _todoList[index].completed = status;
+  // TODO: modify a todo status and update it in Firestore
+  void toggleStatus(Todo item, bool status) {
     notifyListeners();
   }
 }
