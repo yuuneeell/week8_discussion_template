@@ -51,14 +51,24 @@ class TodoModal extends StatelessWidget {
         switch (type) {
           case 'Add':
             {
-              // Instantiate a todo objeect to be inserted, default userID will be 1, the id will be the next id in the list
-              Todo temp =
-                  Todo(completed: false, title: _formFieldController.text);
+              // // Instantiate a todo objeect to be inserted, default userID will be 1, the id will be the next id in the list
+              // Todo temp =
+              //     Todo(completed: false, title: _formFieldController.text);
 
+              // context.read<TodoListProvider>().addTodo(temp);
+
+              // // Remove dialog after adding
+              // Navigator.of(context).pop();
+              // break;
+
+              // Modify the add method to call the provider method
+              Todo temp = Todo(
+                  userId: 1,
+                  completed: false,
+                  title: _formFieldController.text);
               context.read<TodoListProvider>().addTodo(temp);
-
-              // Remove dialog after adding
               Navigator.of(context).pop();
+
               break;
             }
           case 'Edit':
@@ -101,10 +111,10 @@ class TodoModal extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text("Cancel"),
           style: TextButton.styleFrom(
             textStyle: Theme.of(context).textTheme.labelLarge,
           ),
+          child: const Text("Cancel"),
         ),
       ],
     );

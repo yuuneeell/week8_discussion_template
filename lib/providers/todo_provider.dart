@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../models/todo_model.dart';
+import '../api/firebase_todo_api.dart';
 
 class TodoListProvider with ChangeNotifier {
+  late FirebaseTodoAPI firebaseService;
   late Stream<QuerySnapshot> _todosStream;
 
   TodoListProvider() {
+    firebaseService = FirebaseTodoAPI();
     fetchTodos();
   }
 
@@ -13,12 +16,15 @@ class TodoListProvider with ChangeNotifier {
   Stream<QuerySnapshot> get todo => _todosStream;
 
   // TODO: get all todo items from Firestore
-  void fetchTodos() {
+  fetchTodos() {
+    _todosStream = firebaseService.getAllTodos();
     notifyListeners();
   }
 
   // TODO: add todo item and store it in Firestore
-  void addTodo(Todo item) {
+  void addTodo(Todo item) async {
+    String message = await firebaseService.addTodo(item.toJson(item));
+    print(message);
     notifyListeners();
   }
 

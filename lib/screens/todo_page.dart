@@ -45,12 +45,12 @@ class _TodoPageState extends State<TodoPage> {
               Todo todo = Todo.fromJson(
                   snapshot.data?.docs[index].data() as Map<String, dynamic>);
               return Dismissible(
-                key: Key(todo.id.toString()),
+                key: Key(todo.userId.toString()),
                 onDismissed: (direction) {
-                  context.read<TodoListProvider>().deleteTodo(todo);
+                  // context.read<TodoListProvider>().deleteTodo(todo);
 
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('${todo.title} dismissed')));
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  //     SnackBar(content: Text('${todo.title} dismissed')));
                 },
                 background: Container(
                   color: Colors.red,
@@ -71,25 +71,25 @@ class _TodoPageState extends State<TodoPage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) => TodoModal(
-                              type: 'Edit',
-                              item: todo,
-                            ),
-                          );
+                          // showDialog(
+                          //   context: context,
+                          //   builder: (BuildContext context) => TodoModal(
+                          //     type: 'Edit',
+                          //     item: todo,
+                          //   ),
+                          // );
                         },
                         icon: const Icon(Icons.create_outlined),
                       ),
                       IconButton(
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) => TodoModal(
-                              type: 'Delete',
-                              item: todo,
-                            ),
-                          );
+                          // showDialog(
+                          //   context: context,
+                          //   builder: (BuildContext context) => TodoModal(
+                          //     type: 'Delete',
+                          //     item: todo,
+                          //   ),
+                          // );
                         },
                         icon: const Icon(Icons.delete_outlined),
                       )

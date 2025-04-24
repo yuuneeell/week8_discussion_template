@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 class Todo {
-  String? id;
+  int? userId;
   String title;
   bool completed;
 
   Todo({
-    this.id,
+    this.userId,
     required this.title,
     required this.completed,
   });
@@ -14,7 +14,7 @@ class Todo {
   // Factory constructor to instantiate object from json format
   factory Todo.fromJson(Map<String, dynamic> json) {
     return Todo(
-      id: json['id'],
+      userId: json['id'],
       title: json['title'],
       completed: json['completed'],
     );
