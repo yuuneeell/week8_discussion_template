@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "935053689021",
+    "project_id": "wk8-ecjoyosa",
+    "storage_bucket": "wk8-ecjoyosa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935053689021:android:9794af65c33c0ed533b7d4",
+        "android_client_info": {
+          "package_name": "com.example.week8datapersistence"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV5oPmvb7mg19KOkEKYefJsfzbdAZm1NI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935053689021:android:a8a4991ef2a7b89a33b7d4",
+        "android_client_info": {
+          "package_name": "com.example.wk8_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV5oPmvb7mg19KOkEKYefJsfzbdAZm1NI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
